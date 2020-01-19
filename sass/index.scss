@@ -1,0 +1,225 @@
+body {
+  font-size: 14px;
+}
+p {
+  line-height: 1.6;
+}
+input {
+  text-indent: 1em;
+  &::-webkit-input-placeholder {
+    /*WebKit browsers*/
+    color: #999;
+  }
+  &::-moz-input-placeholder {
+    /*Mozilla Firefox*/
+    color: #999;
+  }
+  &::-ms-input-placeholder {
+    /*Internet Explorer*/
+    color: #999;
+  }
+  &[type="submit"] {
+    text-indent: 0;
+    cursor: pointer;
+  }
+}
+input[type="submit"] {
+  text-indent: 0;
+  font-family: '微软雅黑';
+}
+select {
+  appearance: none;
+}
+%one {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+// 文本显示多少行就省略
+@mixin ells($row) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $row;
+  -webkit-box-orient: vertical;
+}
+%in-b {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+}
+i {
+  @extend %in-b;
+}
+i,
+span {
+  vertical-align: middle;
+}
+a {
+  @extend %in-b;
+  box-sizing: border-box;
+}
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+  }
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+}
+%point-a {
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #ff8838;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+}
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+  color: #444444;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.bulider-btn {
+  background-image: linear-gradient(-86deg, #fb8513 0%, #dc4343 100%), linear-gradient(#f47a45, #f47a45);
+  background-blend-mode: normal, normal;
+  box-shadow: 0px 4px 8px 0px rgba(220, 67, 67, 0.32);
+}
+.bulider-head {
+  @extend %clearfix;
+  .head-l {
+    font-size: 24px;
+    line-height: 24px;
+    padding: 40px 0;
+  }
+  .head-r {
+    padding: 28px 0;
+    .consult-tel {
+      height: 46px;
+    }
+    .consult {
+      font-size: 16px;
+      color: #888888;
+    }
+    .icon {
+      width: 16px;
+      height: 16px;
+      background: url(../images/tel.png) no-repeat;
+      margin-right: 8px;
+    }
+    .tel {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 30px;
+      color: #e04c3d;
+    }
+    .bulider-btn {
+      font-size: 16px;
+      line-height: 46px;
+      color: #ffffff;
+      padding: 0 30px;
+      border-radius: 6px;
+      margin-left: 30px;
+    }
+  }
+}
+.bulider-banner {
+  .banner-item {
+    height: 500px;
+  }
+  .item-btn {
+    .wrap {
+      padding: 388px 0 0 432px;
+      box-sizing: border-box;
+    }
+    a {
+      width: 206px;
+      height: 52px;
+      line-height: 52px;
+      border-radius: 26px;
+      border: solid 1px #ffffff;
+      text-align: center;
+      font-size: 18px;
+      color: #fff;
+      margin-right: 40px;
+      &:hover {
+        border: none;
+        background-image: linear-gradient(-86deg, #fb8513 0%, #dc4343 100%), linear-gradient(#ffffff, #ffffff);
+        background-blend-mode: normal, normal;
+        box-shadow: 0px 4px 8px 0px rgba(220, 67, 67, 0.32);
+      }
+    }
+  }
+}
+.bulider-query {
+  height: 306px;
+  background: url(../images/bg_1.png) no-repeat center;
+  margin-top: 24px;
+  padding: 26px 66px 16px 534px;
+  box-sizing: border-box;
+  .query-head {
+    margin-bottom: 20px;
+    ul {
+      @extend %clearfix;
+    }
+    li {
+      float: left;
+      width: 186px;
+      height: 46px;
+      line-height: 46px;
+      font-size: 18px;
+      background-color: #e8e9ff;
+      border-radius: 6px 6px 0px 0px;
+      text-align: center;
+      cursor: pointer;
+      margin-right: 21px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &.cur {
+        background: url(../images/bk_sel.png) no-repeat;
+        color: #fff;
+      }
+    }
+  }
+
+  input,
+  select {
+    height: 46px;
+    line-height: 46px;
+    border: solid 1px #e7e7e7;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  input {
+    width: 100%;
+  }
+  input[type="submit"] {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+  }
+  select {
+    width: 48%;
+    margin-right: 3%;
+    padding: 0 1em;
+    box-sizing: border-box;
+    background: url(../images/icon_2.png) no-repeat 94%;
+    &:nth-of-type(2) {
+      margin-right: 0;
+    }
+  }
+}
